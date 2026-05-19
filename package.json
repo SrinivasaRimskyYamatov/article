@@ -1,11 +1,14 @@
 {
-  "name": "article",
+  "name": "article-service",
   "version": "1.0.0",
-  "description": "XP style blog",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "ejs": "^3.1.10",
