@@ -1,0 +1,128 @@
+<h1>
+<%= post.title %>
+</h1>
+
+<div class="meta">
+
+投稿者:
+<%= post.username %>
+
+</div>
+
+<hr>
+
+<div class="markdown">
+<%- html %>
+</div>
+
+<hr>
+
+<div>
+
+いいね:
+<b>
+<%= likes %>
+</b>
+
+</div>
+
+<br>
+
+<% if(user){ %>
+
+<form
+method="POST"
+action="/like/<%= post.id %>"
+>
+
+<button>
+いいね
+</button>
+
+</form>
+
+<% } %>
+
+<hr>
+
+<h2>
+コメント
+</h2>
+
+<% comments.forEach(c=>{ %>
+
+<div class="comment">
+
+<b>
+<%= c.username %>
+</b>
+
+<br><br>
+
+<%= c.content %>
+
+</div>
+
+<% }) %>
+
+<% if(user){ %>
+
+<form
+method="POST"
+action="/comment/<%= post.id %>"
+>
+
+<textarea
+name="content"
+rows="5"
+required
+></textarea>
+
+<br><br>
+
+<button>
+コメント投稿
+</button>
+
+</form>
+
+<% } %>
+
+<hr>
+
+<% if(user){ %>
+
+<%
+const isOwner =
+user.id === post.user_id;
+
+const isAdmin =
+user.is_admin === 1;
+%>
+
+<% if(isOwner){ %>
+
+<a href="/edit/<%= post.id %>">
+<button>
+編集
+</button>
+</a>
+
+<% } %>
+
+<% if(isOwner || isAdmin){ %>
+
+<form
+method="POST"
+action="/delete/<%= post.id %>"
+>
+
+<button>
+削除
+</button>
+
+</form>
+
+<% } %>
+
+<% } %>

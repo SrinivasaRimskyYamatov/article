@@ -1,0 +1,68 @@
+<h1>
+記事一覧
+</h1>
+
+<div class="toolbar">
+
+<% if(user){ %>
+
+<a href="/create">
+<button>
+新規記事
+</button>
+</a>
+
+<a href="/logout">
+<button>
+ログアウト
+</button>
+</a>
+
+<span>
+ようこそ
+<b>
+<%= user.username %>
+</b>
+さん
+</span>
+
+<% } else { %>
+
+<a href="/login">
+<button>
+ログイン
+</button>
+</a>
+
+<a href="/register">
+<button>
+新規登録
+</button>
+</a>
+
+<% } %>
+
+</div>
+
+<% posts.forEach(post=>{ %>
+
+<div class="post-card">
+
+<div class="post-title">
+
+<a href="/post/<%= post.id %>">
+<%= post.title %>
+</a>
+
+</div>
+
+<div class="meta">
+
+投稿者:
+<%= post.username %>
+
+</div>
+
+</div>
+
+<% }) %>

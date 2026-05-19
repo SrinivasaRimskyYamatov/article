@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title><%= title %></title>
+
+<style>
+
+body{
+    margin:0;
+    background:#008080;
+    font-family:Tahoma,Verdana,sans-serif;
+    color:black;
+}
+
+.topbar{
+    background:linear-gradient(
+        to bottom,
+        #245edb,
+        #1941a5
+    );
+
+    color:white;
+    padding:8px;
+    font-weight:bold;
+
+    border-bottom:
+        2px solid #0b246a;
+}
+
+.window{
+
+    width:900px;
+    margin:30px auto;
+
+    background:#ece9d8;
+
+    border:
+        2px solid #0b246a;
+
+    box-shadow:
+        4px 4px 0px rgba(0,0,0,0.4);
+}
+
+.window-title{
+
+    background:linear-gradient(
+        to bottom,
+        #245edb,
+        #1941a5
+    );
+
+    color:white;
+
+    padding:6px 10px;
+
+    font-weight:bold;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.window-buttons{
+    display:flex;
+    gap:4px;
+}
+
+.window-buttons div{
+
+    width:16px;
+    height:16px;
+
+    background:#d6d3ce;
+
+    border:
+        1px solid white;
+
+    box-shadow:
+        inset -1px -1px #404040,
+        inset 1px 1px white;
+}
+
+.content{
+    padding:20px;
+}
+
+a{
+    color:#0000cc;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+button{
+
+    background:#ece9d8;
+
+    border:
+        2px solid #d4d0c8;
+
+    box-shadow:
+        inset -1px -1px #404040,
+        inset 1px 1px white;
+
+    padding:4px 12px;
+
+    cursor:pointer;
+}
+
+button:active{
+    box-shadow:
+        inset 1px 1px #404040;
+}
+
+input,
+textarea{
+
+    width:100%;
+
+    background:white;
+
+    border:
+        2px solid #7f9db9;
+
+    padding:6px;
+
+    box-sizing:border-box;
+
+    font-family:Tahoma;
+}
+
+.post-card{
+
+    background:white;
+
+    border:
+        1px solid #7f9db9;
+
+    padding:10px;
+
+    margin-bottom:12px;
+}
+
+.post-title{
+
+    font-size:20px;
+    font-weight:bold;
+}
+
+.meta{
+
+    color:#555;
+    font-size:13px;
+}
+
+.toolbar{
+
+    margin-bottom:20px;
+}
+
+.comment{
+
+    background:white;
+
+    border:
+        1px solid #7f9db9;
+
+    padding:10px;
+
+    margin-bottom:10px;
+}
+
+hr{
+    border:none;
+    border-top:1px solid #7f9db9;
+}
+
+.markdown{
+
+    line-height:1.7;
+}
+
+.markdown pre{
+
+    background:black;
+    color:#00ff00;
+
+    padding:10px;
+
+    overflow:auto;
+}
+
+.markdown code{
+    font-family:Consolas,monospace;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="topbar">
+Windows XP Web Style
+</div>
+
+<div class="window">
+
+<div class="window-title">
+
+<div>
+<%= title %>
+</div>
+
+<div class="window-buttons">
+<div></div>
+<div></div>
+<div></div>
+</div>
+
+</div>
+
+<div class="content">
+
+<%- body %>
+
+</div>
+
+</div>
+
+</body>
+</html>

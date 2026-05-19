@@ -1,0 +1,27 @@
+<h1>
+記事編集
+</h1>
+
+<form method="POST">
+
+<input
+name="title"
+value="<%= post.title %>"
+required
+>
+
+<br><br>
+
+<textarea
+name="content"
+rows="20"
+required
+><%= post.content %></textarea>
+
+<br><br>
+
+<button>
+保存
+</button>
+
+</form>
